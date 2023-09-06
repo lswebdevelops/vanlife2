@@ -225,3 +225,29 @@ header a:hover {
 i[class*='van-type-'] {
     padding: 7px 14px;
 }
+
+
+.van-detail{
+    display: flex;
+    /* width: 750px; */
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 15px;;
+    align-items: baseline;
+    gap:14px;
+    margin: auto;
+
+;}
+.van-detail-container img{
+    width: 80%;
+    max-width: 640px;
+    border-radius: 12px;
+
+    ;
+}
+
+.van-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+    ;
+}
