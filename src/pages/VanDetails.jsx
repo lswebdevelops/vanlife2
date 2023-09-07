@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 export default function VanDetails() {
   const params = useParams();
   const [van, setVan] = useState([]);
-  
+
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
       .then((res) => res.json())
@@ -25,7 +25,6 @@ export default function VanDetails() {
         <p>{van.description}</p>
         <button className="link-button">Rent this van</button>
       </div>): <h2>Loading...</h2>}
-
     </div>
   );
 }
