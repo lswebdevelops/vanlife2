@@ -10,6 +10,7 @@ import HostLayout from "./components/HostLayout";
 import Reviews from "./pages/Host/Reviews";
 import Income from "./pages/Host/Income";
 import Dashboard from "./pages/host/Dashboard";
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
             <Route path="income" element={<Income />} />
           </Route>
         </Route>
+
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
