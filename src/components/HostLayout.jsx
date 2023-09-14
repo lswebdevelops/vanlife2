@@ -1,12 +1,14 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+import '../index.css'
 
 const HostLayout = () => {
   return (
     <>
       <nav className="nav-host">
-        <Link to={"/host/"}>Dashboard</Link>
-        <Link to={"/host/reviews"}>Reviews</Link>
-        <Link to={"/host/income"}>Income</Link>
+        <NavLink className={({isActive})=> isActive ? "my-link" : "link"} to={"/host/"}>Dashboard</NavLink>
+        <NavLink className={({isActive})=> isActive ? "my-link" : "link"}  to={"/host/income"}>Income</NavLink>
+        <NavLink className={({isActive})=> isActive ? "my-link" : "link"}  to={"/host/vans"}>Vans</NavLink>
+        <NavLink className={({isActive})=> isActive ? "my-link" : "link"}  to={"/host/reviews"}>Reviews</NavLink>
       </nav>
       <Outlet />
     </>
