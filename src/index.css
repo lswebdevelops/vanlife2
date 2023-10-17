@@ -65,6 +65,9 @@ header a {
   min-height: 350px;
   color: white;
   padding: 45px 23px;
+  max-width: 650px;
+  border-radius: 8px;
+  ;
 }
 
 .home-container h1 {
@@ -100,6 +103,8 @@ header a {
 /*** ABOUT PAGE ***/
 .about-hero-image {
   max-width: 100%;
+  border-radius: 8px;
+
 }
 
 .about-page-content {
@@ -139,6 +144,8 @@ header a {
 /*** VAN PAGES ***/
 .van-list-container {
   padding-inline: 23px;
+  max-width: 650px;
+  border-radius: 8px;
 }
 
 .van-list {
@@ -307,11 +314,13 @@ i[class*="van-type-"] {
   flex-direction: row;
   align-items: center;
   gap: 14px;
+  
 }
 
 .van-detail-host img {
   width: 200px;
   border-radius: 9px;
+  
 }
 
 .reviewsImage {
@@ -321,10 +330,14 @@ i[class*="van-type-"] {
 .dashboard-welcome-review-div {
   background-color: rgb(255, 231, 203);
   padding: 13px 0 0 0;
+  border-radius: 8px;
+
 }
 .van-list-container-dashboard {
   padding: 13px 0 13px 0;
   margin-bottom: 74px;
+  max-width: 650px;
+  border-radius: 8px;
 }
 .review-welcome-div {
   display: flex;
@@ -362,4 +375,9 @@ i[class*="van-type-"] {
 .div-income p{
   font-size: 1.6rem;
   font-weight: 600;
+}
+
+.about-page-container {
+  max-width: 650px;
+  border-radius: 8px;
 }
