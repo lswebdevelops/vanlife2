@@ -177,6 +177,7 @@ header a {
   font-style: normal;
   font-weight: 500;
   border: none;
+  margin-right: 14px;;
   border-radius: 5px;
   background-color: #ffead0;
   color: #4d4d4d;
@@ -209,6 +210,37 @@ header a {
 .van-type.luxury.selected {
   background-color: #161616;
 }
+
+
+.van-type.simple {
+  background-color: #e17654;
+  color: #ffead0;
+
+}
+
+.van-type.rugged {
+  background-color: #115e59;
+  color: #ffead0;
+
+}
+
+.van-type.luxury {
+  background-color: #161616;
+  color: #ffead0;
+
+}
+
+.van-list-container .filter-van-buttons {
+  background-color: rgb(215, 206, 206);;
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  padding: 6px 22px;
+  border-radius: 4px;
+  margin: 12px;
+  ;
+}
+
 
 .van-type.clear-filters {
   margin-left: -20px;
@@ -381,3 +413,4 @@ i[class*="van-type-"] {
   max-width: 650px;
   border-radius: 8px;
 }
+
