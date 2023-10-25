@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,7 +21,7 @@ const Vans = () => {
 
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
-      <Link to={`/vans/${van.id}`}>
+      <Link to={van.id}>
         <img src={van.imageUrl} alt={van.name} />
         <div className="van-info">
           <h3>{van.name}</h3>
@@ -43,11 +43,40 @@ const Vans = () => {
       <NavLink className={`van-type simple`} to={`?type=simple`}>Simple</NavLink>
       <NavLink className={`van-type luxury`} to={`?type=luxury`}>Luxury</NavLink>
       <NavLink className={`van-type rugged`} to={`?type=rugged`}>Rugged</NavLink> */}
-{/*  using button instead of links */}
-      <button className={`van-type simple`} onClick={()=> setSearchParams({type: "simple"})}>Simple</button>
-      <button className={`van-type rugged`} onClick={()=> setSearchParams({type: "rugged"})}>Rugged</button>
-      <button className={`van-type luxury`} onClick={()=> setSearchParams({type: "luxury"})}>Luxury</button>
-      <button className={`van-type`} onClick={()=> setSearchParams({type: ""})}>Clear Filter</button>
+      {/*  using button instead of links */}
+      <button
+        className={`van-type ${
+          typeFilter === "simple" ? `simple` : `van-type`
+        }`}
+        onClick={() => setSearchParams({ type: "simple" })}
+      >
+        Simple
+      </button>
+      <button
+        className={`van-type ${
+          typeFilter === "rugged" ? `rugged` : `van-type`
+        }`}
+        onClick={() => setSearchParams({ type: "rugged" })}
+      >
+        Rugged
+      </button>
+      <button
+        className={`van-type ${
+          typeFilter === "luxury" ? `luxury` : `van-type`
+        }`}
+        onClick={() => setSearchParams({ type: "luxury" })}
+      >
+        Luxury
+      </button>
+      {/*  if there is a typeFilter value, the clear button will appear */}
+      {typeFilter ? (
+        <button
+          className={`van-type-clear van-type`}
+          onClick={() => setSearchParams({ type: "" })}
+        >
+          Clear Filter
+        </button>
+      ) : null}
 
       <div className={`van-list`}>{vanElements}</div>
     </div>
