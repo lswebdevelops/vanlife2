@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, NavLink, useSearchParams } from "react-router-dom";
 
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,10 +39,15 @@ const Vans = () => {
     <div className="van-list-container">
       <h1>Explore our van options</h1>
 
-      <Link className={`filter-van-buttons`} to={`.`}>Clear</Link>
-      <Link className={`van-type simple`} to={`?type=simple`}>Simple</Link>
-      <Link className={`van-type luxury`} to={`?type=luxury`}>Luxury</Link>
-      <Link className={`van-type rugged`} to={`?type=rugged`}>Rugged</Link>
+      {/* <NavLink className={`filter-van-buttons`} to={`.`}>Clear</NavLink>
+      <NavLink className={`van-type simple`} to={`?type=simple`}>Simple</NavLink>
+      <NavLink className={`van-type luxury`} to={`?type=luxury`}>Luxury</NavLink>
+      <NavLink className={`van-type rugged`} to={`?type=rugged`}>Rugged</NavLink> */}
+{/*  using button instead of links */}
+      <button className={`van-type simple`} onClick={()=> setSearchParams({type: "simple"})}>Simple</button>
+      <button className={`van-type rugged`} onClick={()=> setSearchParams({type: "rugged"})}>Rugged</button>
+      <button className={`van-type luxury`} onClick={()=> setSearchParams({type: "luxury"})}>Luxury</button>
+      <button className={`van-type`} onClick={()=> setSearchParams({type: ""})}>Clear Filter</button>
 
       <div className={`van-list`}>{vanElements}</div>
     </div>
