@@ -6,7 +6,7 @@ const Vans = () => {
 
   const typeFilter = searchParams.get("type");
 
-  // console.log(typeFilter);
+  console.log(typeFilter);
 
   const [vans, setVans] = useState([]);
   useEffect(() => {
