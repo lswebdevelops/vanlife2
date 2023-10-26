@@ -3,7 +3,6 @@ import { Link, useSearchParams } from "react-router-dom";
 
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  
 
   const typeFilter = searchParams.get("type");
 
@@ -22,12 +21,15 @@ const Vans = () => {
 
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
-      <Link 
+      <Link
         to={van.id}
         //  passing the state with the link
 
-      state={{search: `?${searchParams.toString()}`}}
-        >
+        state={{
+          search: `?${searchParams.toString()}`,
+          type: typeFilter,
+        }}
+      >
         <img src={van.imageUrl} alt={van.name} />
         <div className="van-info">
           <h3>{van.name}</h3>
