@@ -415,3 +415,9 @@ i[class*="van-type-"] {
   border-radius: 8px;
 }
 
+.back-button{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;;
+
+}
