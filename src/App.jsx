@@ -12,12 +12,15 @@ import Income from "./pages/Host/Income";
 import Dashboard from "./pages/Host/Dashboard";
 import HostVans from './pages/Host/HostVans'
 import HostVanDetail from './pages/Host/HostVanDetail'
+import NotFound from "./pages/PageNotFound";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/*  catch all Route> for wrong urls */}
+          <Route path="*" element={<NotFound />}/>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
